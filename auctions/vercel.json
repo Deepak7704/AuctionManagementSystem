@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "manage.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/manage.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "commerce.settings",
+      "PYTHONUNBUFFERED": "1",
+      "DATABASE_URL": "sqlite:///db.sqlite3"
+    },
+    "build": {
+      "env": {
+        "PIPENV_VENV_IN_PROJECT": "true",
+        "PYTHON_VERSION": "3.12.4" 
+      }
+    }
+  }
+  

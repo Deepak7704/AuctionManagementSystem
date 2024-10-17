@@ -4,13 +4,13 @@
     <h2>Active Listings</h2>
     <form action="{% url 'category' %}" method="post" class="my-3">
         {% csrf_token %}
-        <label for="category">Choose A Category:</label>
+        <h4><label for="category">Choose A Category:</label></h4>
         <select name="categoryobject" id="category">
             {% for categoryobj in categories %}
                 <option value="{{categoryobj}}">{{categoryobj}}</option>
             {% endfor %}
         </select>
-        <input type="submit">
+        <input class="btn btn-outline-primary" type="submit">
     </form>
     <div class="row mx-3">
         {% for listing in listings %}

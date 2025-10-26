@@ -2,15 +2,15 @@
 
 {% block body %}
     <h2>Active Listings</h2>
-    <form action="{% url 'category' %}" method="post" class="my-3">
+        <form action="{% url 'category' %}" method="post" class="my-3">
         {% csrf_token %}
-        <h4><label for="category">Choose A Category:</label></h4>
-        <select name="categoryobject" id="category">
+        <h4>Choose A Category:</h4>
+        <div>
             {% for categoryobj in categories %}
-                <option value="{{categoryobj}}">{{categoryobj}}</option>
+                <button type="submit" name="categoryobject" value="{{categoryobj}}" class="btn btn-outline-primary mx-1">{{categoryobj}}</button>
             {% endfor %}
-        </select>
-        <input class="btn btn-outline-primary" type="submit">
+        </div>
+        
     </form>
     <div class="row mx-3">
         {% for listing in listings %}
